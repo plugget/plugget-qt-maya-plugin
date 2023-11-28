@@ -3,10 +3,20 @@ requires = ["setuptools", "setuptools-scm"]
 # build-backend = "setuptools.build_meta"
 
 
+[tool.flit.metadata]
+module = "plugget_maya"
+author = "Hannes"
+# author-email = "your.email@example.com"
+home-page = "https://github.com/hannesdelbeke/plugget-maya-plugin"
+description = "expose plugget as a maya plugin"
+
+
 [tool.setuptools]
 py_modules = ["plugget_qt_maya_plugin"]
 
 
+
+# todo cleanup, has only a single py file not a module
 [project]
 name = "plugget_qt_maya_plugin"
 authors = [
