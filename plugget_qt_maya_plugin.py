@@ -5,7 +5,7 @@ import maya.cmds as cmds
 
 MENU_NAME = "ToolsMenu"  # no spaces in names, use CamelCase
 MENU_LABEL = "Tools"  # spaces are fine in labels
-MENU_ENTRY_LABEL = "My cool tool"
+MENU_ENTRY_LABEL = "Plugget Qt"
 
 MENU_PARENT = "MayaWindow"  # do not change
 
@@ -49,7 +49,8 @@ def unregister_command(plugin):
 # =============================== Menu ===========================================
 def show(*args):
     # TODO import our custom module
-    print("hello")
+    import plugget_qt
+    plugget_qt.show()
 
 
 def loadMenu():
