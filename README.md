@@ -1,4 +1,4 @@
-# Maya Plugget Qt
+# Plugget Qt Maya plugin
 
 A maya plugin to add [plugget-qt](https://github.com/plugget/plugget-qt) to the menu
 
