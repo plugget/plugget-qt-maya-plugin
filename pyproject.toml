@@ -4,11 +4,11 @@ requires = ["setuptools", "setuptools-scm"]
 
 
 [tool.flit.metadata]
-module = "plugget_maya"
+module = "plugget_qt_maya_plugin"
 author = "Hannes"
 # author-email = "your.email@example.com"
-home-page = "https://github.com/hannesdelbeke/plugget-maya-plugin"
-description = "expose plugget as a maya plugin"
+home-page = "https://github.com/plugget/plugget-qt-maya-plugin/"
+description = "a Maya plugin to load the UI for Plugget (Qt)"
 
 
 [tool.setuptools]
