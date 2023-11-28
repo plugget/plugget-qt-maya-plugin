@@ -4,15 +4,15 @@ requires = ["setuptools", "setuptools-scm"]
 
 
 [tool.setuptools]
-py_modules = ["my_plugin"]
+py_modules = ["plugget_qt_maya_plugin"]
 
 
 [project]
-name = "my_plugin"
+name = "plugget_qt_maya_plugin"
 authors = [
     {name = "Hannes"},
 ]
-description = "a demo plugin for a maya template"
+description = "a Maya plugin to load the UI for Plugget (Qt)"
 readme = "README.md"
 requires-python = ">=3.4"
 keywords = ["maya", "plugin"]
@@ -21,7 +21,7 @@ classifiers = [
     "Programming Language :: Python :: 3.7",
 ]
 dependencies = [
-    'importlib-metadata; python_version<"3.7"',
+    'importlib-metadata; python_version<"3.7"', "plugget-qt"
 ]
 # dynamic = ["version"]
 version = "0.0.1"
@@ -33,4 +33,4 @@ version = "0.0.1"
 # my-script = "my_package.module:function"
 
 [project.urls]
-Homepage = "https://github.com/hannesdelbeke/maya-plugin-template"
+Homepage = "https://github.com/hannesdelbeke/plugget-qt-maya-plugin"
