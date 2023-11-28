@@ -8,7 +8,7 @@ string $mayaInterpreter = `substitute "maya.exe" $mayaPythonPath "mayapy.exe"`;
 string $mayaScriptFolder = `getenv "MAYA_APP_DIR"` + "/scripts";
 
 // Define the package to install
-string $packageName = "plugget";
+string $packageName = "plugget-qt";
 
 // Define the target folder in My Documents
 string $mayaDocumentsFolder = `getenv "HOME"` + "/maya/scripts";
