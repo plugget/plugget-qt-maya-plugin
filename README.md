@@ -1,5 +1,6 @@
 # Maya Plugget Qt
 
+A maya plugin to add [plugget-qt](https://github.com/plugget/plugget-qt) to the menu
 
 ### Manual installation
 
