@@ -1,22 +1,20 @@
 // Execute a Python command to get the path to the Maya Python interpreter
 string $mayaPythonPath = `python("import sys; f'\"{sys.executable}\"'")`;
 
-// Replace "maya.exe" with "mayapy.exe" in the path
+// get maya python interpreter path
 string $mayaInterpreter = `substitute "maya.exe" $mayaPythonPath "mayapy.exe"`;
-
-// Define the target folder
-string $mayaScriptFolder = `getenv "MAYA_APP_DIR"` + "/scripts";
 
 // Define the package to install
 string $packageName = "plugget-qt";
 
 // Define the target folder in My Documents
-string $mayaDocumentsFolder = `getenv "HOME"` + "/maya/scripts";
-string $targetFolderPath = $mayaDocumentsFolder + "/";
+// string $mayaScriptFolder = `getenv "MAYA_APP_DIR"` + "/scripts";
+string $targetFolderPath = `getenv "HOME"` + "/maya/scripts"+ "/";
 
 // Define the pip install command
 string $pipInstallCommand = $mayaInterpreter + " -m pip install --target=" + $targetFolderPath + " " + $packageName;
 
+// TODO add support to download plugin to "/maya/plug-ins"
 
 // Create a progress window
 string $progressWindow = `progressWindow -title "Installing Package" -progress 0 -status "Installing..." -isInterruptable true`;
