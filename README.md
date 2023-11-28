@@ -1,21 +1,8 @@
-# Maya Python plugin template
+# Maya Plugget Qt
 
-A template to quickly make a Python plugin for Maya. (For modules, see [Maya module template](https://github.com/hannesdelbeke/maya-module-template)  
-- sample repo using this template: https://github.com/hannesdelbeke/maya-pip-qt  
 
-### Features
 
-When installed, Maya's plug-in manager displays your plugin  
-![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)
-
-#### handle dependencies automatically
-Pip install auto handles dependencies, removing the need for vendoring dependencies. Without pip install you need to manually install the dependencies.  
-This template has a `pyproject.toml` to support pip install to a Maya plugin folder, e.g.
-```
-pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins"
-```
-<sup>_1. if the target folder doesn't exist, this command creates a `Maya/plug-ins` folder in your documents , which requires admin access_</sup>  
-<sup>_2. When a user has been renamed on Windows, `%username%` will return the current name. But the folder path will use the old name_</sup>  
+#### install
 
 #### add to menu
 - Maya menu sample code
@@ -27,21 +14,29 @@ pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/h
 - Plugin setup
   - rename the demo plugin folder
   - add load & unload code to the `initializePlugin` & `uninitializePlugin` methods
-      - `initializePlugin` & `uninitializePlugin` don't follow the PEP8 name convention. Do not change this, or they won't run.
-  - optionally handle command registration on load & unload 
-- Optional
-  - replace this `README.md` with your own instructions
-  - Add a LICENSE
+
  
 ### Gotchas
 - Maya plugins don't support packages, only a single module
 - you can't add to existing menus. e.g. the `Windows` menu, named `mainWindowsMenu` or it will be empty if plugin loads on startup.
 
-### Plugin
-Plugins let the user easily enable / disable a tool in Maya (with Maya's plugin manager)  
-They also let you run code on startup, without editing the `userSetup.py` file, keeping your Maya clean / vanilla.  
 
 ### installation
+
+#### install python files
+```
+pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins"
+```
+<sup>_1. if the target folder doesn't exist, this command creates a `Maya/plug-ins` folder in your documents , which requires admin access_</sup>  
+<sup>_2. When a user has been renamed on Windows, `%username%` will return the current name. But the folder path will use the old name_</sup>  
+
+#### enable plugin
+Enable the plugin in Maya's plug-in manager:  
+![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)
+
+
+
+
 TODO
 ### menu entry
 - [ ] Create the menu on the plugin initialize
