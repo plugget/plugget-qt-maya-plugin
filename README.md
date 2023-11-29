@@ -8,11 +8,10 @@ A maya plugin to add [plugget-qt](https://github.com/plugget/plugget-qt) to the 
 ## Installation 
 
 ### Installer
-- [Download](https://github.com/plugget/plugget-qt-maya-plugin/archive/refs/heads/main.zip) the project 
-- Get the  `installer.mel` from the project you downloaded, (or get it [here](https://raw.githubusercontent.com/plugget/plugget-qt-maya-plugin/main/installer.mel)) and drag & drop it in Maya.
-- This auto installs plugget qt & it's dependencies on Windows OS.
-- currently it doesnt install the plugin file in your plugins folder yet,  
-copy the `plugget-qt-maya-plugin.py` to the `maya/plug-ins` folder.  
+1. [Download](https://github.com/plugget/plugget-qt-maya-plugin/archive/refs/heads/main.zip) the project 
+2. drag & drop the  `installer.mel` in Maya.  <!-- [here](https://raw.githubusercontent.com/plugget/plugget-qt-maya-plugin/main/installer.mel))   -->  
+This auto installs plugget qt & it's dependencies on Windows OS.
+3. copy the `plugget-qt-maya-plugin.py` to the `user/documents/maya/plug-ins` folder.  
 
 ### Manual installation
 <details>
