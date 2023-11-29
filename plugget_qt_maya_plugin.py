@@ -1,6 +1,61 @@
 import sys
 import maya.api.OpenMaya as om
 import maya.cmds as cmds
+import shiboken2
+import maya.OpenMayaUI as apiUI
+from maya import cmds, OpenMayaUI as omui
+from PySide2 import QtWidgets, QtCore
+
+
+# def get_maya_window():
+#     ptr = apiUI.MQtUtil.mainWindow()
+#     if ptr is not None:
+#         return shiboken2.wrapInstance(int(ptr), QtWidgets.QWidget)
+
+
+def Dock(Widget:type, width:int=300, show:bool=True):
+    """
+    Wrap your widget in a native dockable Maya widget
+    Widget (QWidget): Class
+    show (bool): Whether to show the resulting dock once created
+    """
+
+    name = Widget.__name__
+    label = getattr(Widget, "label", name)
+
+    try:
+        cmds.deleteUI(name)
+    except RuntimeError:
+        pass
+
+    dockControl = cmds.workspaceControl(
+        name,
+        tabToControl=["AttributeEditor", -1],
+        initialWidth=width,
+        minimumWidth=True,
+        widthProperty="preferred",
+        label=label
+    )
+
+    dockPtr = omui.MQtUtil.findControl(dockControl)
+    dockWidget = shiboken2.wrapInstance(int(dockPtr), QtWidgets.QWidget)
+    dockWidget.setAttribute(QtCore.Qt.WA_DeleteOnClose)
+
+    child = Widget(parent=dockWidget)
+    dockWidget.layout().addWidget(child)
+
+    if show:
+        cmds.evalDeferred(
+            lambda *args: cmds.workspaceControl(
+                dockControl,
+                edit=True,
+                restore=True
+            )
+        )
+
+    return child
+
+
 
 
 MENU_NAME = "ToolsMenu"  # no spaces in names, use CamelCase
@@ -48,9 +103,10 @@ def unregister_command(plugin):
 
 # =============================== Menu ===========================================
 def show(*args):
-    # TODO import our custom module
     import plugget_qt
-    plugget_qt.show()
+    
+    dock_widget = Dock(plugget_qt.PluggetWidget)
+    return dock_widget
 
 
 def loadMenu():
