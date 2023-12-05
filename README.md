@@ -42,3 +42,4 @@ Enable the `plugget_qt_maya_plugin.py` plugin in Maya's plug-in manager:
 
 ## other
 - plugget package https://github.com/plugget/plugget-pkgs/tree/main/maya/plugget-qt-maya-plugin
+- Maya discussion https://forums.cgsociety.org/t/plugget-a-free-maya-tool-manager/2074249
