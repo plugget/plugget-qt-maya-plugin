@@ -2,7 +2,7 @@
 
 A maya plugin to add [plugget-qt](https://github.com/plugget/plugget-qt) to the menu.  
 When run, it opens a dockable widget to search & install Maya plugins.   
-![image](https://github.com/plugget/plugget-qt-maya-plugin/assets/3758308/36c17c2d-ccbe-4938-960f-9cb02e932695)
+![image](https://github.com/plugget/plugget-qt-maya-plugin/assets/3758308/cce315dd-b509-4050-be2e-29af1196d992)
 
 
 
