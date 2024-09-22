@@ -1,16 +1,20 @@
 import sys
 import maya.api.OpenMaya as om
 import maya.cmds as cmds
-import shiboken2
 import maya.OpenMayaUI as apiUI
 from maya import cmds, OpenMayaUI as omui
-from PySide2 import QtWidgets, QtCore
-
+try:
+    import shiboken2 as shiboken
+    from PySide2 import QtWidgets, QtCore
+except:
+    import shiboken6 as shiboken
+    from PySide6 import QtWidgets, QtCore
+    
 
 # def get_maya_window():
 #     ptr = apiUI.MQtUtil.mainWindow()
 #     if ptr is not None:
-#         return shiboken2.wrapInstance(int(ptr), QtWidgets.QWidget)
+#         return shiboken.wrapInstance(int(ptr), QtWidgets.QWidget)
 
 
 def Dock(Widget:type, width:int=300, show:bool=True):
@@ -38,7 +42,7 @@ def Dock(Widget:type, width:int=300, show:bool=True):
     )
 
     dockPtr = omui.MQtUtil.findControl(dockControl)
-    dockWidget = shiboken2.wrapInstance(int(dockPtr), QtWidgets.QWidget)
+    dockWidget = shiboken.wrapInstance(int(dockPtr), QtWidgets.QWidget)
     dockWidget.setAttribute(QtCore.Qt.WA_DeleteOnClose)
 
     child = Widget(parent=dockWidget)
