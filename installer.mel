@@ -43,6 +43,11 @@ if (!`filetest -d $pluginFolderPath`) {
     // Create the plugin folder
     sysFile -makeDir $pluginFolderPath;
     print("Plugin folder created: " + $pluginFolderPath + "\n");
+
+    // If a new folder was created, append it to MAYA_PLUG_IN_PATH
+    string $pluginPathEnv = `getenv "MAYA_PLUG_IN_PATH"`;
+    string $newPluginPathEnv = $pluginPathEnv + ";" + $pluginFolderPath;
+    putenv "MAYA_PLUG_IN_PATH" $newPluginPathEnv;
 } else {
     print("Plugin folder already exists: " + $pluginFolderPath + "\n");
 }
@@ -64,13 +69,13 @@ python("import shutil; shutil.copyfile(r'" + $pluginSourceFilePath + "', r'" + $
 if (!`filetest -f $pluginDestinationFilePath`) {
     error("plugin file did not copy to: " + $pluginDestinationFilePath);
 }
-
-
 print("Plugin file copied to: " + $pluginDestinationFilePath + "\n");
+print("Package installation complete.\n");
+// Close the progress window
+progressWindow -endProgress;
 
-// Load the plugin
+// Load the plugin, this might fail if the plugin contains python errors
 loadPlugin "plugget_qt_maya_plugin.py";
-
 // Enable the plugin
 eval("plug-inInfo -q -loaded plugget_qt_maya_plugin.py");
 
@@ -78,10 +83,5 @@ eval("plug-inInfo -q -loaded plugget_qt_maya_plugin.py");
 
 
 
-// Notify the user about the completion of the installation
-print("Package installation complete.\n");
-
-// Close the progress window
-progressWindow -endProgress;
 
 
