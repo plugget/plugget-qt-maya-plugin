@@ -12,8 +12,7 @@ When run, it opens a dockable widget to search & install Maya plugins.
 ### Installer
 1. [Download](https://github.com/plugget/plugget-qt-maya-plugin/archive/refs/heads/main.zip) & extract the project
 2. drag & drop the  `installer.mel` in Maya.  <!-- [here](https://raw.githubusercontent.com/plugget/plugget-qt-maya-plugin/main/installer.mel))   -->  
-This auto installs plugget qt & it's dependencies on Windows OS.
-3. copy the `plugget-qt-maya-plugin.py` to the `user/documents/maya/plug-ins` folder.  
+This auto installs plugget qt & it's dependencies on Windows OS. (currently no Mac & Linux support, use manuel install)
 
 ### Manual installation
 <details>
