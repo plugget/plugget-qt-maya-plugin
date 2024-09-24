@@ -76,12 +76,3 @@ progressWindow -endProgress;
 
 // Load the plugin, this might fail if the plugin contains python errors
 loadPlugin "plugget_qt_maya_plugin.py";
-// Enable the plugin
-eval("plug-inInfo -q -loaded plugget_qt_maya_plugin.py");
-
-
-
-
-
-
-
