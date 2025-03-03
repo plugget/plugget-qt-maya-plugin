@@ -25,7 +25,7 @@ This auto installs plugget qt & it's dependencies on Windows OS. (currently no M
 pip install https://github.com/plugget/plugget-qt-maya-plugin/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins" --no-dependencies
 ```
 <sup>_1. if the target folder doesn't exist, this command creates a `Maya/plug-ins` folder in your documents , which requires admin access_</sup>  
-<sup>_2. When a user has been renamed on Windows, `%username%` will return the current name. But the folder path will use the old name_</sup>  
+<sup>_2. When a user has been renamed on Windows, `%username%` will return the current name. But the folder path will use the old name, requiring you to manually edit the path_</sup>  
 
 #### install the Python dependencies
 pip install the dependencies to the Maya script folder
