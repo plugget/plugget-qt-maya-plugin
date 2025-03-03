@@ -1,7 +1,6 @@
 # Plugget Qt Maya plugin
 
-A maya plugin to add [plugget-qt](https://github.com/plugget/plugget-qt) to the menu.  
-When run, it opens a dockable widget to search & install Maya plugins.   
+An Autodesk Maya plugin to search, install & update Maya tools.   
 ![image](https://github.com/plugget/plugget-qt-maya-plugin/assets/3758308/cce315dd-b509-4050-be2e-29af1196d992)
 
 
@@ -39,8 +38,16 @@ Enable the `plugget_qt_maya_plugin.py` plugin in Maya's plug-in manager:
 
 </details>
 
+### Launch
 Open plugget qt from the Maya menu `Tools/Plugget`
 
 ## other
+- All UI logic lives in [plugget-qt](https://github.com/plugget/plugget-qt)
+- all search & install logic lives in `plugget`
+- `plugget-qt-maya-plugin` does the Maya-only magic:
+  - It adds a menu entry to open the UI.
+  - And it makes the window dockable in the viewport
+
+other
 - plugget package https://github.com/plugget/plugget-pkgs/tree/main/maya/plugget-qt-maya-plugin
 - Maya discussion https://forums.cgsociety.org/t/plugget-a-free-maya-tool-manager/2074249
