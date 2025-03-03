@@ -14,11 +14,11 @@ When run, it opens a dockable widget to search & install Maya plugins.
 2. drag & drop the  `installer.mel` in Maya.  <!-- [here](https://raw.githubusercontent.com/plugget/plugget-qt-maya-plugin/main/installer.mel))   -->  
 This auto installs plugget qt & it's dependencies on Windows OS. (currently no Mac & Linux support, use manuel install)
 
-### Manual installation
+### 1. Manual installation
 <details>
 <summary>Manual installation </summary>
 
-#### install the Python plugin
+#### 2. install the Python plugin
 - copy the `plugget-qt-maya-plugin.py` to the `maya/plug-ins` folder.  
 - or run the below command to do it for you.
 ```
@@ -27,7 +27,7 @@ pip install https://github.com/plugget/plugget-qt-maya-plugin/archive/refs/heads
 <sup>_1. if the target folder doesn't exist, this command creates a `Maya/plug-ins` folder in your documents , which requires admin access_</sup>  
 <sup>_2. When a user has been renamed on Windows, `%username%` will return the current name. But the folder path will use the old name, requiring you to manually edit the path_</sup>  
 
-#### install the Python dependencies
+#### 3. install the Python dependencies
 pip install the dependencies to the Maya script folder
 ```
 pip install plugget-qt --target "C:/Users/%username%/Documents/Maya/scripts" --no-dependencies
