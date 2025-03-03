@@ -32,13 +32,12 @@ pip install the dependencies to the Maya script folder
 ```
 pip install plugget-qt --target "C:/Users/%username%/Documents/Maya/scripts" --no-dependencies
 ```
-</details>
-
-#### enable plugin
+#### 3. enable plugin
 Enable the `plugget_qt_maya_plugin.py` plugin in Maya's plug-in manager:  
 `Windows` > `Settings/Preferences` > `Plug-in Manager`  
 ![image](https://github.com/plugget/plugget-qt-maya-plugin/assets/3758308/2f8f3e0e-660a-47da-ae32-10c865ed9f4d)
 
+</details>
 
 Open plugget qt from the Maya menu `Tools/Plugget`
 
