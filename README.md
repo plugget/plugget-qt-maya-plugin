@@ -16,7 +16,7 @@ to install plugget qt & it's dependencies.
 
 ### Manual installation
 <details>
-<summary>Manual installation </summary>
+<summary>Click here to show instructions for the manual installation </summary>
 
 #### 1. install the Python plugin
 - copy the `plugget-qt-maya-plugin.py` to the `maya/plug-ins` folder.  
